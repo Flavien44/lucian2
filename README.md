@@ -1,13 +1,13 @@
-Commande utile à savoir : 
+Commande utile ï¿½ savoir :
 
 
-pour fonctionner en local : 
+pour fonctionner en local :
 faire composer require server --dev
 
-pour lancer le server en local : 
+pour lancer le server en local :
 php bin/console server:run
 
 
-pour ajouter en bdd : 
+pour ajouter en bdd :
 php bin/console make:migration
-php bin/console doctrine:migratios:migrate
+php bin/console doctrine:migrations:migrate
