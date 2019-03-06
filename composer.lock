@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7331c21f10b91a205867738b881ef26e",
+    "content-hash": "ab118b58d477da373971f6cb90070925",
     "packages": [
         {
             "name": "api-platform/api-pack",
@@ -2124,16 +2124,16 @@
         },
         {
             "name": "symfony/asset",
-            "version": "v4.2.2",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/asset.git",
-                "reference": "fdbf4375f1692c227ff07e2d577bb4c2ea214016"
+                "reference": "7eee96a8630f9448304ae4f0e3b474ea4e033664"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/asset/zipball/fdbf4375f1692c227ff07e2d577bb4c2ea214016",
-                "reference": "fdbf4375f1692c227ff07e2d577bb4c2ea214016",
+                "url": "https://api.github.com/repos/symfony/asset/zipball/7eee96a8630f9448304ae4f0e3b474ea4e033664",
+                "reference": "7eee96a8630f9448304ae4f0e3b474ea4e033664",
                 "shasum": ""
             },
             "require": {
@@ -2176,7 +2176,7 @@
             ],
             "description": "Symfony Asset Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-03T09:07:35+00:00"
+            "time": "2019-01-16T20:35:37+00:00"
         },
         {
             "name": "symfony/cache",
@@ -4805,6 +4805,60 @@
             "time": "2019-01-03T09:09:06+00:00"
         },
         {
+            "name": "symfony/webpack-encore-bundle",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/webpack-encore-bundle.git",
+                "reference": "e23e9d32abd7fb62b84ad0ff62b235b517c61bc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/e23e9d32abd7fb62b84ad0ff62b235b517c61bc4",
+                "reference": "e23e9d32abd7fb62b84ad0ff62b235b517c61bc4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/asset": "^3.4 || ^4.0",
+                "symfony/config": "^3.4 || ^4.0",
+                "symfony/contracts": "^1.0",
+                "symfony/dependency-injection": "^3.4 || ^4.0",
+                "symfony/http-kernel": "^3.4 || ^4.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "symfony/framework-bundle": "^3.4 || ^4.0",
+                "symfony/phpunit-bridge": "^3.4 || ^4.1",
+                "symfony/twig-bundle": "^3.4 || ^4.0",
+                "twig/twig": "^1.35 || ^2.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/webpack-encore",
+                    "url": "https://github.com/symfony/webpack-encore"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\WebpackEncoreBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Integration with your Symfony app & Webpack Encore!",
+            "time": "2019-03-04T15:09:28+00:00"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v4.2.2",
             "source": {
@@ -5198,6 +5252,71 @@
     ],
     "packages-dev": [
         {
+            "name": "symfony/phpunit-bridge",
+            "version": "v4.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/phpunit-bridge.git",
+                "reference": "2cc651a38fcb831a405c14fcb76fcb00320e7ee8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/2cc651a38fcb831a405c14fcb76fcb00320e7ee8",
+                "reference": "2cc651a38fcb831a405c14fcb76fcb00320e7ee8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+            },
+            "suggest": {
+                "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+            },
+            "bin": [
+                "bin/simple-phpunit"
+            ],
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                },
+                "thanks": {
+                    "name": "phpunit/phpunit",
+                    "url": "https://github.com/sebastianbergmann/phpunit"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Bridge\\PhpUnit\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony PHPUnit Bridge",
+            "homepage": "https://symfony.com",
+            "time": "2019-02-18T06:49:49+00:00"
+        },
+        {
             "name": "symfony/process",
             "version": "v4.2.3",
             "source": {
@@ -5248,16 +5367,16 @@
         },
         {
             "name": "symfony/web-server-bundle",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/web-server-bundle.git",
-                "reference": "8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3"
+                "reference": "d189cb4349d807df4c4fab932e2764d1fbe65c4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3",
-                "reference": "8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3",
+                "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/d189cb4349d807df4c4fab932e2764d1fbe65c4f",
+                "reference": "d189cb4349d807df4c4fab932e2764d1fbe65c4f",
                 "shasum": ""
             },
             "require": {
@@ -5303,7 +5422,7 @@
             ],
             "description": "Symfony WebServerBundle",
             "homepage": "https://symfony.com",
-            "time": "2019-01-16T20:35:37+00:00"
+            "time": "2019-02-23T15:17:42+00:00"
         }
     ],
     "aliases": [],

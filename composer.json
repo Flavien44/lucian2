@@ -7,12 +7,14 @@
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.2",
         "easycorp/easyadmin-bundle": "^2.0",
+        "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.2.*",
         "symfony/maker-bundle": "dev-master",
         "symfony/orm-pack": "^1.0",
+        "symfony/webpack-encore-bundle": "^1.2",
         "symfony/yaml": "4.2.*"
     },
     "config": {
@@ -61,6 +63,7 @@
         }
     },
     "require-dev": {
+        "symfony/phpunit-bridge": "4.2.*",
         "symfony/web-server-bundle": "4.2.*"
     }
 }
