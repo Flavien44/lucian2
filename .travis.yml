@@ -1,0 +1,52 @@
+# Project language
+language: php
+
+# Allows use container-based infrastructure
+sudo: false
+
+# Start mysql service
+services:
+  - mysql
+
+# Cache composer packages so "composer install" is faster
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+# Matrix to test in every php version
+matrix:
+  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
+  fast_finish: true
+  include:
+    - php: 7.1
+
+# Define an environment variable
+env:
+  - SYMFONY_VERSION="dev-master" DB=mysql
+
+# Update composer
+before-install:
+  - composer self-update
+
+# Install composer dependencies,
+# Create database, schema and fixtures
+install:
+  - composer install
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
+
+# Run script
+script:
+  - phpunit tests/AppBundle/Util/
+  - bash <(curl -s https://codecov.io/bash) -t 47165ff1-d005-4427-8f2c-c64bd3fa5200
+
+after_success:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
+
+notifications:
+  slack: traquenardland:9SzrrHnuHI72LitgEuCzdczE
